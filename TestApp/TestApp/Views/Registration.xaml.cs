@@ -84,7 +84,7 @@ namespace TestApp.Views
                 var stream = file.GetStream();
                 return stream;
             });
-
+            RetrievedImage.IsVisible = true;
             GetImageBytes(file.GetStream());
         }
 
