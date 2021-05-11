@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestApp.Views.Registration">
+    <AbsoluteLayout>
+    <StackLayout Orientation="Vertical" 
+                 Spacing="10"
+                 AbsoluteLayout.LayoutFlags="All" 
+                 AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                 Padding="10" Margin="10" 
+                 BackgroundColor="White">
+            <Label Text="User Form" 
+                   Margin="0,20,0,10"
+                   HorizontalOptions="Center"
+                   TextColor="Black"
+                   VerticalOptions="Center"
+                   FontSize="20">
+            </Label>
+            <Entry x:Name="UsernameEntry"
+                   Placeholder="Username"
+                   TextColor="Black"
+                   BackgroundColor="CornflowerBlue"
+                   VerticalOptions="Center"
+                   HorizontalOptions="FillAndExpand">
+            </Entry>
+            <StackLayout Orientation="Horizontal" 
+                         Spacing="5" 
+                         HorizontalOptions="FillAndExpand" 
+                         Margin="10">
+                <Label x:Name="TakeImageLabel"
+                       TextColor="Black"
+                       BackgroundColor="Cornsilk"
+                       Text="Take an Image"
+                       VerticalOptions="Center"
+                       HorizontalOptions="CenterAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapTakeImage"/>
+                    </Label.GestureRecognizers>
+                 </Label>
+                <Label x:Name="UploadImageLabel"
+                       TextColor="Black"
+                       BackgroundColor="Cornsilk"
+                       Text="Upload an Image"
+                       VerticalOptions="Center"
+                       HorizontalOptions="CenterAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapUploadImage"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <Image x:Name="RetrievedImage"
+                   IsVisible="False"/>
+            <Picker x:Name="picker" 
+                    BackgroundColor="CornflowerBlue"
+                    TextColor="Black"
+                    Title="Select Gender" >
+                <Picker.Items>
+                    <x:String>Female</x:String>
+                    <x:String>Male</x:String>
+                </Picker.Items>
+            </Picker>
+                    
+            <Label Text="Save"
+                   HorizontalOptions="CenterAndExpand"
+                   Padding="20"
+                   Margin="10"
+                   TextColor="Black"
+                   BackgroundColor="Bisque">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SaveData"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>

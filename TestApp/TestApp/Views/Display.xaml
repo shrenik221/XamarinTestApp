@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestApp.Views.Display">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Vertical">
+                <ListView x:Name="dataList"
+                          ItemsSource="{Binding Users}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid BackgroundColor="White"  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0.05, 0.03, .15, 4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.4*"/>
+                                        <ColumnDefinition Width="0.6*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Column="0" Padding="5">
+                                        <Image Source="{Binding Image}"/>
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="1" Orientation="Vertical" Padding="5">
+                                        <Label Text="{Binding Gender}"
+                                           FontSize="12"/>
+                                        <Label Text="{Binding Username}"
+                                           FontSize="20"/>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
